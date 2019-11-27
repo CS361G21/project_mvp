@@ -2,9 +2,9 @@ var port = 34520
 var serverName = "http://flip3.engr.oregonstate.edu";
 
 var sqlHost = 'classmysql.engr.oregonstate.edu';
-var sqlUser = 'cs340_deae';
-var sqlPassword = '0343';
-var sqlDb = 'cs340_deae';
+var sqlUser = 'cs340_benjamse';
+var sqlPassword = '4211';
+var sqlDb = 'cs340_benjamse';
 
 var express = require('express');
 var app = express();
@@ -115,6 +115,21 @@ app.post('/', function(req, res, next) {
     }
 });
 
+app.get('/household', function(req, res, next) {
+   let user_id = 72;
+   var sqlStr = "SELECT * FROM Address WHERE User_Id = (?)";
+   pool.query(sqlStr, user_id, function(err, results) {
+      if (err) {
+	console.log(err);
+	res.render('household', {});
+      } else {
+        res.render('household', {
+	    address: results[0],
+            user_id: user_id	
+	});
+      }
+   });
+});
 
 app.post('/create_account', function(req, res, next) {
     var form_type = req.body.form_type;
