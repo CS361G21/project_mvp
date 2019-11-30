@@ -115,6 +115,11 @@ app.post('/', function(req, res, next) {
     }
 });
 
+
+app.get('/summary', function(req, res, next) {
+    res.render('summary', {});
+});
+
 app.get('/household', function(req, res, next) {
    let user_id = 72;
    var sqlStr = "SELECT * FROM Address WHERE User_Id = (?)";
