@@ -34,6 +34,15 @@ CREATE TABLE `fp_user` (
   `password` char(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE Address (
+   id INT NOT NULL,
+   Street varchar(255) NOT NULL,
+   State FLOAT NOT NULL,
+   Country varchar(255) NOT NULL,
+   Zip varchar(255) NOT NULL,
+    User_Id INT NOT NULL
+);
+
 --
 -- Dumping data for table `fp_user`
 --
@@ -58,6 +67,9 @@ INSERT INTO `fp_user` (`id`, `username`, `password`) VALUES
 (21, 'demo6', '66666666'),
 (23, 'nrg1', '12345678'),
 (24, 'nrg2', '12345678');
+
+INSERT INTO Address VALUES
+(1, "111 Street Ave.", "OR", "US", "91123", 72)
 
 --
 -- Indexes for dumped tables
