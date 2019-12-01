@@ -1,4 +1,4 @@
-var port = 34520
+var port = 34528
 var serverName = "http://flip3.engr.oregonstate.edu";
 
 var sqlHost = 'classmysql.engr.oregonstate.edu';
@@ -97,8 +97,9 @@ app.post('/', function(req, res, next) {
                 req.session.logged_in_username = req.body.login_username;
                 req.session.logged_in_user_id = results[0].id;
 
-                res.redirect('home');
-                    return;
+                //res.redirect('home');
+				res.render('summary', {});
+                return;
             } else {
                 context.login_error = "Invalid username or password";
                 res.render('login', context);
@@ -107,6 +108,25 @@ app.post('/', function(req, res, next) {
     }
 });
 
+app.get('/summary', function (req, res, next) {
+	res.render('summary', {});
+});
+
+app.get('/household', function (req, res, next) {
+	let user_id = 72;
+	var sqlStr = "SELECT * FROM Address WHERE User_Id = (?)";
+	pool.query(sqlStr, user_id, function (err, results) {
+		if (err) {
+			console.log(err);
+			res.render('household', {});
+		} else {
+			res.render('household', {
+				address: results[0],
+				user_id: user_id
+			});
+		}
+	});
+});
 
 app.post('/create_account', function(req, res, next) {
     var form_type = req.body.form_type;
