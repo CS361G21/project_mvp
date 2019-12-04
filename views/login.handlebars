@@ -1,0 +1,78 @@
+    <nav class="navbar-login">
+        <div class="navbar-content">
+            <a href="/" class="navbar-brand" id="brand-text">Home Electricity Management System</a>
+
+            <form action="/" method="POST" id="login-form" name="login-form" class="inline">
+                <input type="text" name="login_username" id="login-username" placeholder="Username" required>
+                <input type="password" name="login_password" id="login-password" placeholder="Password" required>
+                <input type="hidden" name="form_type" value="login_form">
+                <button type="submit" class="btn btn-primary" name="login-form">Log In</button>
+                {{#if login_error}}
+                <p class="error-text">{{login_error}}</p>
+                {{/if}}
+            </form>
+
+            <a href="/household">Go to household</a>
+        </div>
+    </nav>
+
+    <div class="container col-sm-12 container-section">
+		<div class="container">
+			<div class="row align-items-center justify-content-center container-content">
+				
+				<div class="col-lg-6">
+					<!-- Reference: https://media.coindesk.com/uploads/2017/08/charts-market-e1501553204818.jpg 
+						 Labelled for non-commercial reuse -->
+					<img src="resources\chart.jpg" class="float-left" id="login-img" />
+				</div>
+				
+				<div class="col-lg-6">
+					<div class="account-form-col">
+						<div class="row justify-content-center align-items-center">
+							<h1>Create a New Account</h1>
+							<h3>It's free and always will be.</h3>
+						</div>
+						
+						<form action="/create_account" method="POST" id="create_account_form" name="create_account_form">
+							<div class="row justify-content-center align-items-center">
+								<input type="text" name="create_username" placeholder="Username" required>
+							</div>
+
+							<div class="row justify-content-center align-items-center">
+								<input type="password" name="create_password" placeholder="Password" minlength="8" required>
+							</div>
+				
+							<input type="hidden" name="form_type" value="create_account_form">
+
+							<div class="row justify-content-center align-items-center">
+								<button type="submit" class="btn btn-primary btn-create">Create</button>
+							</div>
+
+							{{#if create_error}}
+							<div class="row justify-content-center align-items-center">
+								<p class="error-text">{{create_error}}</p>
+							</div>
+							{{/if}}
+
+						</form>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<footer class="footer">
+		<div class="container center fill-height">
+			<div class="row center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6 center">
+					<span class="footer-element">
+						Home Electricity Management System © 2019
+					</span>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</footer>
