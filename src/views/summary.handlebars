@@ -29,28 +29,54 @@
 				<table>
 					<tr>
 						<th>Lighting</th>
-						<th>Climate Control</th>
-						<th>Water Heater</th>
-						<th>Appliances</th>
-						<th>Electronics</th>
-					</tr>
-
-					<tr>
 						<td>15%</td>
+					</tr>
+					<tr>
+						<th>Climate Control</th>
 						<td>20%</td>
+					</tr>
+					<tr>
+						<th>Water Heater</th>
 						<td>20%</td>
+					</tr>
+					<tr>
+						<th>Appliances</th>
 						<td>30%</td>
+					</tr>
+					<tr>
+						<th>Electronics</th>
 						<td>15%</td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="col-lg-6">
-				<img src="resources/static-sheet.png" />
+				<img id="bar" src="resources/static-sheet.png" />
+				<img id="pie" style="display:none;" src="resources/pie_chart.png" />
+				<button onclick="toggleChart();">Toggle chart</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+function toggleChart() {
+	let bar = document.getElementById("bar");
+	let pie = document.getElementById("pie");
+
+	if(bar.style.display == "none") {
+		bar.style.display = "block";
+	} else {
+		bar.style.display = "none";
+	}
+
+	if(pie.style.display == "none") {
+		pie.style.display = "block";
+	} else {
+		pie.style.display = "none";
+	}
+}
+</script>
 
 <!-- Navbar scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
