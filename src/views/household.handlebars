@@ -1,11 +1,20 @@
-<nav class="navbar navbar-inverse bg-inverse">
-	<div class="col-sm-2">
-		<a href="/summary" class="navbar-brand-home" id="brand-text">Home Electricity Management System</a>
+<nav class="sidenav">
+	<a href="/summary" id="brand-text" class="sidebar-title">Home Electricity Management System</a>
+	<div class="sidenav-content">
+		<a href="/summary">Summary</a>
+		<a href="/household">Household</a>
+		<a href="/history">History</a>
+		<a href="/recommendations">Recommendations</a>
+		<a href="/remotepm">Remote Power Management</a>
+		<a href="/droneController">Drone Controller</a>
+		<a href="/contact">Contact</a>
 	</div>
-	<div class="col-sm-8"></div>
+	<div class="sidenav-logout">
+		<a class="dropdown-item log-out-link nav-link" href="/logout">Logout</a>
+	</div>
+	<!--
 	<div class="col-sm-2" id="navbarSupportedContent">
 		<span class="navbar-text">
-			<!-- Reference: http://www.iconarchive.com/show/ios7-style-icons-by-matiasam/Stock-icon.html -->
 			<image src="resources\us_electric_socket-32.png" height="20" width="20" /> {{username}}
 		</span>
 		<span>
@@ -17,12 +26,7 @@
 			</li>
 		</span>
 	</div>
-	<div class="col-sm-2">
-		<a href="/household">Go to household address</a>
-	</div>
-	<div class="col-sm-2">
-		<a href="/management">Go to management</a>
-	</div>
+	-->
 </nav>
 
 
@@ -36,7 +40,6 @@
 				<p> Country: {{ this.address.Country }} </p>
 				<p> Zip: {{ this.address.Zip }} </p>
 				<hr />
-				<a href="/summary">Go to household summary</a>
 			</div>
 		</div>
 	</div>

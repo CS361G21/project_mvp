@@ -67,6 +67,25 @@ app.get('/', function(req, res, next) {
     }
 });
 
+app.get('/history', function (req, res, next) {
+	res.render('history', {});
+});
+
+app.get('/recommendations', function (req, res, next) {
+	res.render('recommendations', {});
+});
+
+app.get('/remotepm', function (req, res, next) {
+	res.render('management', {});
+});
+
+app.get('/droneController', function (req, res, next) {
+	res.render('droneController', {});
+});
+
+app.get('/contact', function (req, res, next) {
+	res.render('contact', {});
+});
 
 
 app.get('/logout', function(req, res, next) {
@@ -127,6 +146,27 @@ app.get('/household', function (req, res, next) {
 		}
 	});
 });
+
+app.get('/history', function (req, res, next) {
+	res.render('history', {});
+});
+
+app.get('/recommendations', function (req, res, next) {
+	res.render('recommendations', {});
+});
+
+app.get('/remotepm', function (req, res, next) {
+	res.render('remotepm', {});
+});
+
+app.get('/droneController', function (req, res, next) {
+	res.render('droneController', {});
+});
+
+app.get('/contact', function (req, res, next) {
+	res.render('contact', {});
+});
+
 
 app.post('/create_account', function(req, res, next) {
     var form_type = req.body.form_type;
